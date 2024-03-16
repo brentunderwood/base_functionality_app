@@ -8,7 +8,6 @@ LOCAL_SRC_FILES := \
 	RtbProbe.cpp
 
 ifeq ($(TARGET_ARCH_ABI),armeabi-v7a)
-  LOCAL_ARM_NEON := false
 endif
 
 LOCAL_CFLAGS    := --std=c++11 \
