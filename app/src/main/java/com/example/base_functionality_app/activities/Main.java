@@ -46,8 +46,16 @@ public class Main extends Activity implements View.OnClickListener{
     public void onClick(View v) {
         // Handle button click events here
         if (v.getId() == R.id.main_button) {
+            System.out.println("printing legal moves");
             List<String> legal_moves = sf.get_legal_moves("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
             System.out.println(legal_moves);
+
+            System.out.println("Running analysis depth 5");
+            sf.fixed_analysis("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", "depth", 5);
+
+            System.out.println("extracting results");
+            List<String> results = sf.extract_analysis_results();
+            System.out.println(results);
         }
     }
 
