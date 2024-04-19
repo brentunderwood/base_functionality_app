@@ -24,12 +24,14 @@ endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE    := stockfish
+LOCAL_MODULE_FILENAME := libstockfish
 include $(LOCAL_PATH)/build_sf.mk
 
 ifeq ($(TARGET_ARCH_ABI),armeabi-v7a)
   MY_ARCH_DEF := -mthumb -march=armv7-a -mfloat-abi=softfp
   include $(CLEAR_VARS)
   LOCAL_MODULE    := stockfish_nosimd
+  LOCAL_MODULE_FILENAME := libstockfish_nosimd
   include $(LOCAL_PATH)/build_sf.mk
   stockfish : stockfish_nosimd
 endif
@@ -38,6 +40,7 @@ ifeq ($(TARGET_ARCH_ABI),x86)
   MY_ARCH_DEF :=
   include $(CLEAR_VARS)
   LOCAL_MODULE    := stockfish_nosimd
+  LOCAL_MODULE_FILENAME := libstockfish_nosimd
   include $(LOCAL_PATH)/build_sf.mk
   stockfish : stockfish_nosimd
 endif

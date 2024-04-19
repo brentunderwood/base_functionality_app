@@ -50,8 +50,8 @@ dependencies {
 // Copy Stockfish executables to assets directory
 task copyToJniLibs(type: Copy, dependsOn: 'externalNativeBuildRelease') {
     from('build/intermediates/ndkBuild/release/obj/local') {
-        include '*/stockfish'
-        include '*/stockfish_nosimd'
+        include '*/libstockfish'
+        include '*/libstockfish_nosimd'
     }
     into 'src/main/jniLibs'
 
