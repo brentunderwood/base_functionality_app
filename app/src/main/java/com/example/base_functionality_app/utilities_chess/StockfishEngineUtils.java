@@ -33,7 +33,7 @@ public class StockfishEngineUtils {
             // Get the path for the native library (executable)
             ApplicationInfo appInfo = context.getApplicationInfo();
             String nativeLibDir = appInfo.nativeLibraryDir;
-            String executablePath = nativeLibDir + "/stockfish.so";
+            String executablePath = nativeLibDir + "/libstockfish.so";
 
             System.out.println(executablePath);
             // Create a File instance for the executable
